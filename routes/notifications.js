@@ -23,7 +23,6 @@ router.post(
 
 router.delete("/notifications/:id", verifyToken, async (req, res) => {
   try {
-    // test git
     const notifications = await Notifications.findById(req.params.id);
     if (!notifications) {
       return res.status(500).json({ message: "notifications not found" });
